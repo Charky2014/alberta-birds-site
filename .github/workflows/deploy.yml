@@ -1,0 +1,21 @@
+name: main
+on: [ push ]
+env:
+  MELI_SITE: "87c5f1e0-87f2-47c8-9bf7-038ad07d2999"
+jobs:
+  build:
+    if: "github.repository == 'Charky2014/alberta-birds-site'"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: "publish"
+        run: |
+          npx @getmeli/cli@next upload \
+            --url "https://web.lord.farm" \
+            --site "$MELI_SITE" \
+            --token "$MELI_TOKEN" \
+            --release "$GITHUB_SHA" \
+            ./
+        env:
+          MELI_TOKEN: ${{ secrets.MELI_TOKEN }}
+
