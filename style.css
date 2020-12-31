@@ -1,0 +1,12 @@
+img {
+  display: block;
+  width: calc(100% - 100px);
+  margin: 0px auto;
+}
+html {
+  color: rgb(255, 145, 0);
+  background-color: rgb(18, 61, 78);
+}
+h2 {
+  margin: 60px 0 10px 0;
+}
